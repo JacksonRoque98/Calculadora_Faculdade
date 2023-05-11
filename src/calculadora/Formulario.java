@@ -566,7 +566,16 @@ public class Formulario extends javax.swing.JFrame {
     private void btnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaizActionPerformed
         valor1 = Double.parseDouble(returnTextField.getText());
         double raizQuadrada = Math.sqrt(valor1);
+        result = raizQuadrada;
         returnTextField.setText(String.valueOf(raizQuadrada));
+
+        listOfResults.add(result);
+        
+        final StringBuilder historicoBuilder = new StringBuilder();
+        for(Double itens : listOfResults){
+            historicoBuilder.append(String.valueOf(itens)).append("\n");
+    }
+        txtHistorico.setText(historicoBuilder.toString());
     }//GEN-LAST:event_btnRaizActionPerformed
 
     private void btnPorcentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentoActionPerformed
